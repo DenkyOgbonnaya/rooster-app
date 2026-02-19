@@ -35,7 +35,7 @@ npm android
 ### For iOS
 
 ```bash
-# using Yarn
+# using npm
 npm ios
 ```
 
