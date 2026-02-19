@@ -21,9 +21,10 @@ module.exports = {
         inactive: "#717680",
         borderLight: "#F5F5F5",
         border: '#F3F4F6',
+        borderMuted: "#E5E7EB",
         placeholder: '#717680',
-        card: '#FFFFFF'
-       
+        card: '#FFFFFF',
+       surface: "#F3F4F6"
       },
       fontSize: {
          xs: [
