@@ -114,6 +114,26 @@ export default function RoosterCalendarEngine() {
         0,
       ).toISOString(),
     },
+     {
+      id: '4',
+      title: 'Night Shift 2',
+      user: 'James',
+      location: 'Cape Town',
+      start: new Date(
+        selectedDate.getFullYear(),
+        selectedDate.getMonth(),
+        selectedDate.getDate(),
+        22,
+        0,
+      ).toISOString(),
+      end: new Date(
+        selectedDate.getFullYear(),
+        selectedDate.getMonth(),
+        selectedDate.getDate(),
+        23,
+        0,
+      ).toISOString(),
+    },
   ];
 
   const rooms: IRoom[] = [

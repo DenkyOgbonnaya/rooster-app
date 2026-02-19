@@ -22,7 +22,7 @@ export default function Splash() {
 
   return (
     <View className=" bg-background flex items-center justify-center flex-1">
-      <Text className=' text-primary font-medium font-body_medium text-base'>Splash Screen</Text>
+      <Text className=' text-primary font-bold font-body_bold text-base'>Splash Screen</Text>
     </View>
   );
 }

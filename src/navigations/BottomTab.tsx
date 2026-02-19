@@ -17,7 +17,7 @@ export default function BottomTab() {
 
   return (
     <Tab.Navigator
-      initialRouteName={HOME_STACK}
+      initialRouteName={ROOSTER_STACK}
       screenOptions={{
         headerShown: false,
         tabBarStyle: styles.tabStyle,
@@ -143,12 +143,12 @@ const styles = StyleSheet.create({
   },
    activeBorder: {
     position: 'absolute',
-    top: -18,
+    top: -13.5,
     height: 4, 
     width: 64, 
     backgroundColor: '#5653FC', 
     
-    borderBottomLeftRadius: 2, 
-    borderBottomRightRadius: 2,
+    borderBottomLeftRadius: 4, 
+    borderBottomRightRadius: 4,
   },
 });
