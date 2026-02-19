@@ -11,12 +11,14 @@ import { IRoom, Shift } from '../../types/rooster.type';
 import { MenuIcon } from '../../assets';
 
 import Room from '../../components/room';
+import ShiftDetailsSheet from '../../components/shiftDetails';
 
-const currentDate = new Date()
+const currentDate = new Date();
 
 export default function RoosterCalendarEngine() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [activeRoom, setActiveRoom] = useState('Room 1');
+  const [isShiftOpen, setIsShiftOpen] = useState(false);
 
   // generate the calendar for the current week
   const weekDays = useMemo(() => {
@@ -32,11 +34,11 @@ export default function RoosterCalendarEngine() {
   }, [selectedDate]);
 
   const events: Shift[] = [
-     {
+    {
       id: '0',
       title: 'Morning Shift',
       user: 'Patrick',
-      location: "Accra",
+      location: 'Accra',
       start: new Date(
         selectedDate.getFullYear(),
         selectedDate.getMonth(),
@@ -56,7 +58,7 @@ export default function RoosterCalendarEngine() {
       id: '1',
       title: 'Morning Shift',
       user: 'James',
-      location: "Lagos",
+      location: 'Lagos',
       start: new Date(
         selectedDate.getFullYear(),
         selectedDate.getMonth(),
@@ -76,7 +78,7 @@ export default function RoosterCalendarEngine() {
       id: '2',
       title: 'Afternoon Shift',
       user: 'Dennis',
-     location: "Cairo",
+      location: 'Cairo',
       start: new Date(
         selectedDate.getFullYear(),
         selectedDate.getMonth(),
@@ -96,7 +98,7 @@ export default function RoosterCalendarEngine() {
       id: '3',
       title: 'Night Shift',
       user: 'Mike',
-      location: "Nairobi",
+      location: 'Nairobi',
       start: new Date(
         selectedDate.getFullYear(),
         selectedDate.getMonth(),
@@ -125,7 +127,9 @@ export default function RoosterCalendarEngine() {
     },
   ];
 
-  const handleView = (shift: Shift) => {};
+  const handleView = (shift: Shift) => {
+    setIsShiftOpen(true)
+  };
 
   const handleActiveRoom = (roomName: string) => {
     setActiveRoom(roomName);
@@ -202,6 +206,11 @@ export default function RoosterCalendarEngine() {
           onView={handleView}
         />
       ))}
+
+      <ShiftDetailsSheet
+        visible={isShiftOpen}
+        onClose={() => setIsShiftOpen(false)}
+      />
     </SafeAreaView>
   );
 }
